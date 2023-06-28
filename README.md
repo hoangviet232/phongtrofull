@@ -40,5 +40,7 @@ Deployment This section has moved here: https://facebook.github.io/create-react-
 npm run build fails to minify This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 open terminal
+
 cd server - npm install - npm start
+
 cd client - npm install - npm start
