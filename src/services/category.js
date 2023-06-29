@@ -1,13 +1,16 @@
-import axiosConfig from '../axiosConfig'
+import db from '../models'
 
-export const apiGetCategories = () => new Promise(async (resolve, reject) => {
+// GET ALL CATEGORY
+export const getCategoriesSerivce = () => new Promise(async (resolve, reject) => {
     try {
-        const response = await axiosConfig({
-            method: 'get',
-            url: '/api/v1/category/all',
+        const response = await db.Category.findAll({
+            raw: true,
         })
-        resolve(response)
-
+        resolve({
+            err: response ? 0 : 1,
+            msg: response ? 'OK' : 'Failed to get categories.',
+            response
+        })
     } catch (error) {
         reject(error)
     }
