@@ -1,35 +1,27 @@
-import db from '../models'
+import axios from '../axiosConfig'
 
-// GET CURRENT
-export const getOne = (id) => new Promise(async (resolve, reject) => {
+export const apiGetCurrent = () => new Promise(async (resolve, reject) => {
     try {
-        const response = await db.User.findOne({
-            where: { id },
-            raw: true,
-            attributes: {
-                exclude: ['password']
-            }
+        const response = await axios({
+            method: 'get',
+            url: '/api/v1/user/get-current',
         })
-        resolve({
-            err: response ? 0 : 1,
-            msg: response ? 'OK' : 'Failed to get user.',
-            response
-        })
+        resolve(response)
+
     } catch (error) {
         reject(error)
     }
 })
 
-export const updateUser  = (payload,id) => new Promise(async (resolve, reject) => {
+export const apiUpdateUser = (payload) => new Promise(async (resolve, reject) => {
     try {
-        const response = await db.User.update(payload,{
-           where:{id}
+        const response = await axios({
+            method: 'put',
+            url: '/api/v1/user',
+            data:payload
         })
-        resolve({
-            err: response[0] > 0 ? 0 : 1,
-            msg: response[0] > 0 ? 'Update' : 'Failed to get user.',
-            response
-        })
+        resolve(response)
+
     } catch (error) {
         reject(error)
     }
