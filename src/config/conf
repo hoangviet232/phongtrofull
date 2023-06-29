@@ -1,0 +1,47 @@
+
+
+
+
+{
+
+
+  "development": {
+    "username": "db_phongtro123_cfjp_user",
+    "password": "hL3T4nNJWPqcjetMedsi1G6QjqjjUBBu",
+    "database": "db_phongtro123_cfjp",
+    "host": "dpg-cgdcl182qv2aq5knr6j0-a.singapore-postgres.render.com",
+    "dialect": "postgres",
+    "logging": false,
+    "dialectOptions":{
+      "ssl":{
+        "require":true,
+        "rejectUnauthorized":false
+      }
+    }
+  },
+
+
+
+  "production": {
+    "username": "db_phongtro123_cfjp_user",
+    "password": "hL3T4nNJWPqcjetMedsi1G6QjqjjUBBu",
+    "database": "db_phongtro123_cfjp",
+    "host": "dpg-cgdcl182qv2aq5knr6j0-a.singapore-postgres.render.com",
+    "dialect": "postgres",
+    "logging": false,
+    "dialectOptions":{
+      "ssl":{
+        "require":true,
+        "rejectUnauthorized":false
+      }
+    }
+  },
+
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
